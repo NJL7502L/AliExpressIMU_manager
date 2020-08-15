@@ -1,6 +1,6 @@
 #include <AliExpressIMU_manager.h>
 
-void AliExpressIMU_manager::read(){
+void AliExpressIMU_manager::read(FlexCAN_T4_manager* canmanager){
   uint8_t data[8] = {};
   canmanager->getBus3(0x0A,data);
   rawPitch.c[0] = data[0];

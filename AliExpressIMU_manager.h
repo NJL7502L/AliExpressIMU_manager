@@ -6,7 +6,6 @@
 
 class AliExpressIMU_manager {
 private:
-  FlexCAN_T4_manager* canmanager = FlexCAN_T4_manager::getInstance();
   union FtoC{
     float f;
     uint8_t c[4];
@@ -14,7 +13,7 @@ private:
   FtoC rawPitch, rawRoll, rawYaw;
 public:
   float pitch,roll,yaw;
-  void read();
+  void read(FlexCAN_T4_manager* canmanager);
 };
 
 #endif
